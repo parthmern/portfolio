@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: 400; */
+    font-style: normal;
+}
+
+.thin{
+    font-family: "Geist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+body,html {
+    background: #0c0c0c;
+    color: #fff;
+    overscroll-behavior-y: none;
+    color-scheme: dark;
+}
+
+.text-secondary {
+    --tw-text-opacity: 1;
+    color: rgb(170 170 170/var(--tw-text-opacity));
+}
+
+#title{
+   
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+
+
+}
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.6em;
+}
+
+.custom-list li::before {
+  content: "—"; /* em dash or use "–" for en dash */
+  position: absolute;
+  left: 0;
+   /* match the gray from screenshot */
+}
+
+
+code {
+  display: inline-block;
+  padding: 0 5px;
+  font-family: "Space Mono", monospace ,sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  color: #ff6363;
+  background: rgba(255, 99, 99, 0.15);
+  border-radius: 6px;
+  white-space: pre;
+  word-break: normal;
+  text-align: left;
+  text-shadow: none;
+  hyphens: none;
+  tab-size: 4;
+}
+
+mark {
+    font-weight: 300;
+    background: none;
+    color: #ff6363;
+    text-underline-offset: 0;
+}
+
+mark:hover{
+    text-decoration: underline;
+    transition: text-underline-offset 0.1s ease-out;
+    text-underline-offset: 4px;
+    text-decoration-style: dashed; 
+}
