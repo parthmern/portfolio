@@ -1,6 +1,5 @@
 import React from "react";
 import "./Leetcode.css";
-import { CodeXml } from "lucide-react";
 import ImagePreview from "./ImagePreview";
 import YouTubePlayer from "./YoutubePlayer";
 

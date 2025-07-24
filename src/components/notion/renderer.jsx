@@ -4,6 +4,7 @@ import { NotionRenderer } from "react-notion-x";
 import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "katex/dist/katex.min.css";
+import "./notion.css"
 
 // React.lazy for third-party components
 const Code = React.lazy(() =>
@@ -26,8 +27,7 @@ export const NotionPage= ({ recordMap, rootPageId }) => {
   }
 
   return (
-    <div className="notion__container">
-      
+    <div className="notion__container w-full">
         <NotionRenderer
           recordMap={recordMap}
           fullPage={true}

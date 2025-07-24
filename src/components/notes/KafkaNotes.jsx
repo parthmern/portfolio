@@ -1,18 +1,17 @@
-// Notion.tsx
-
 import React, { useEffect, useState } from "react";
-import { NotionPage } from "./notion/renderer";
+import { NotionPage } from "../notion/renderer";
 
 const rootPageId = "236c49f9d7d68093bf74d168004afcc3";
 
-const Notion = () => {
+const KafkaNotes = () => {
   const [recordMap, setRecordMap] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetch("https://portfolio-mu-nine-81.vercel.app/api/notion?pageId=236c49f9d7d68093bf74d168004afcc3");
+        let data = await fetch("https://portfolio-mu-nine-81.vercel.app/api/notion?pageId=236c49f9d7d68093bf74d168004afcc3");
+        data = await data.json();
         setRecordMap(data);
       } catch (err) {
         setError("Failed to fetch Notion page: " + err.message);
@@ -28,4 +27,4 @@ const Notion = () => {
   return <NotionPage recordMap={recordMap} rootPageId={rootPageId} />;
 };
 
-export default Notion;
+export default KafkaNotes;
