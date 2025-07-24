@@ -1,7 +1,6 @@
 
 
 import { notion } from "@/notion";
-import { NotionPage } from "@/components/notion";
 
 const rootPageId = "236c49f9d7d68093bf74d168004afcc3"; // add your root page id
 
@@ -13,6 +12,7 @@ export default async function Home() {
   const data = await getData(rootPageId);
 
   return (
-    <NotionPage recordMap={data} rootPageId={rootPageId} />
+    // <NotionPage recordMap={data} rootPageId={rootPageId} />
+    <p>please donot missuse @parthmern github</p>
   );
 }
