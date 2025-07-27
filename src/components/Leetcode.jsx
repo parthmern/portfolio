@@ -10,7 +10,7 @@ const Leetcode = () => {
         {/* navabar */}
         <div
           id="title"
-          className="mt-20 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
+          className="mt-28 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
         >
           Leetcode - clone
         </div>
@@ -236,7 +236,13 @@ const Leetcode = () => {
           <p>- change to tcp connection http req from evalutionService to submissionService ( can be
             solved by running multiple parallel workers )</p>
           <p>
-            - can implement Rate Limiting, Bots avoidation )</p>
+            - can implement Rate Limiting, Bots avoidation </p>
+        </div>
+
+        <div className="bg-[#ebeced0c] font-thin mt-5 p-4 mb-10 rounded-md">
+          <p>💚 Some Links</p>
+          <p>- Site link - <mark><a target="_blank" rel="noopener noreferrer" href="https://codeladderarena.parthmern.store">codeladderarena.parthmern.store</a></mark></p>
+          <p>- infra diagram - <mark><a target="_blank" rel="noopener noreferrer"  href="https://app.eraser.io/workspace/7yUSHREhxaJRqsXjwMlm?origin=share">erase io</a></mark>   </p>
         </div>
 
         
