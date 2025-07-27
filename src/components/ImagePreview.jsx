@@ -34,7 +34,7 @@ export default function ImagePreview({imageUrl}) {
       {isFullscreen && (
         <div
           id="backdrop"
-          className="fixed inset-0 p-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md backdrop-brightness-75"
+          className="fixed z-[99999999] inset-0 p-0 flex items-center justify-center bg-black/60 backdrop-blur-md backdrop-brightness-75"
           onClick={handleBackdropClick}
         >
 
