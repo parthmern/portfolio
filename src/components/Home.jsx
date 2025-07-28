@@ -2,6 +2,7 @@ import React from "react";
 import codeladderarenaImg from "../images/home/codeladderarean.jpg";
 import UberImg from "../images/home/uber.jpg";
 import { useNavigate } from "react-router-dom";
+import KafkaNotesImg from "../images/home/kafkaNotes.jpg";
 
 export const Icon = ({ className, ...rest }) => {
   return (
@@ -91,11 +92,17 @@ export const Home = () => {
 
       <div
         id="title"
-        className="mt-28 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
+        className="mt-28 mb-10 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
       >
         Notes
       </div>
-      
+      <div onClick={()=>navigate("/notes/kafka")} className="w-[70%] cursor-pointer mx-auto flex gap-3 rounded-md border-[#FFFFFF] hover:border-opacity-35 hover:bg-[#1b1c1e] bg-[#111214] border-[1px] border-opacity-20 ">
+        <img className="w-[70%]" src={KafkaNotesImg} alt="Kafka Notes" />
+        <div className="w-[30%] p-4 flex flex-col items-center justify-center">
+          <p>One day read</p> 
+          <p><mark>Start Reading</mark></p>
+          </div>
+      </div>
     </div>
   );
 };

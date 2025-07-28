@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NotionPage } from "../notion/renderer";
+import "../Loader.css"
 
 const rootPageId = "236c49f9d7d68093bf74d168004afcc3";
 
@@ -22,7 +23,7 @@ const KafkaNotes = () => {
   }, []);
 
   if (error) return <p>{error}</p>;
-  if (!recordMap) return <p>Loading Notion content...</p>;
+  if (!recordMap) return <div className="loader ml-80 pt-36"></div>;
 
   return <NotionPage recordMap={recordMap} rootPageId={rootPageId} />;
 };

@@ -5,6 +5,7 @@ import "react-notion-x/src/styles.css";
 import "prismjs/themes/prism-tomorrow.css";
 import "katex/dist/katex.min.css";
 import "./notion.css"
+import "../Loader.css"
 
 // React.lazy for third-party components
 const Code = React.lazy(() =>
@@ -23,11 +24,11 @@ const Modal = React.lazy(() =>
 
 export const NotionPage= ({ recordMap, rootPageId }) => {
   if (!recordMap) {
-    return <p>Loading Notion content...</p>;
+    return <div className="loader pt-36"></div>;
   }
 
   return (
-    <div className="notion__container w-full">
+    <div className="notion__container w-full pt-16">
         <NotionRenderer
           recordMap={recordMap}
           fullPage={true}
