@@ -43,7 +43,7 @@ const Leetcode = () => {
               <p>Fastify</p>
               <p>WebSocket - Socket.io</p>
               <p>Redis Queue</p>
-              <p>Docker</p>
+              <p>Docker ( DockerRode, Images )</p>
               <p>MongoDB</p>
               <p>AWS- S3, Cloudfront, EC2, ASG, ECR, ECS</p>
             </div>
