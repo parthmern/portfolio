@@ -1,5 +1,6 @@
 import React from "react";
 import codeladderarenaImg from "../images/home/codeladderarean.jpg";
+import UberImg from "../images/home/uber.jpg";
 import { useNavigate } from "react-router-dom";
 
 export const Icon = ({ className, ...rest }) => {
@@ -24,11 +25,11 @@ export const Home = () => {
     <div className="pt-20 pb-10">
       <p>Home</p>
       <div
-          id="title"
-          className="mt-28 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
-        >
-          Projects
-        </div>
+        id="title"
+        className="mt-28 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
+      >
+        Projects
+      </div>
       <div className="border mt-10 border-white/[0.2] flex flex-col items-start w-[50%] mx-auto p-4 relative ">
         <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
@@ -37,7 +38,10 @@ export const Home = () => {
 
         <img src={codeladderarenaImg}></img>
 
-        <div onClick={()=>navigate("/leetcode")} className="mt-4 hover:bg-[#ebeced0c] p-2 rounded-md cursor-pointer">
+        <div
+          onClick={() => navigate("/leetcode")}
+          className="mt-4 hover:bg-[#ebeced0c] p-2 rounded-md cursor-pointer"
+        >
           <p className=" text-xl">
             Code Ladder Arena
             <span className="mt-4  text-base  font-thin">
@@ -48,8 +52,9 @@ export const Home = () => {
           <p className="text-base  font-thin">
             {" "}
             Tech Stacks : Javascript + Typescript | ReactJS + Recoil | ExpressJs
-            + NodeJs | Fastify | WebSocket - Socket.io | Redis Queue | Docker ( DockerRode, Images ) |
-            MongoDB | AWS - S3, Cloudfront, EC2, ASG, ECR, ECS
+            + NodeJs | Fastify | WebSocket - Socket.io | Redis Queue | Docker (
+            DockerRode, Images ) | MongoDB | AWS - S3, Cloudfront, EC2, ASG,
+            ECR, ECS
           </p>
           <mark>See in details</mark>
         </div>
@@ -61,9 +66,12 @@ export const Home = () => {
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
 
-        <img src={codeladderarenaImg}></img>
+        <img src={UberImg}></img>
 
-        <div onClick={()=>navigate("/leetcode")} className="mt-4 hover:bg-[#ebeced0c] p-2 rounded-md cursor-pointer">
+        <div
+          onClick={() => navigate("/uber")}
+          className="mt-4 hover:bg-[#ebeced0c] p-2 rounded-md cursor-pointer"
+        >
           <p className=" text-xl">
             Uber Backend Clone
             <span className="mt-4  text-base  font-thin">
@@ -73,13 +81,21 @@ export const Home = () => {
           </p>
           <p className="text-base  font-thin">
             {" "}
-            Tech Stacks : Javascript + Typescript | ReactJS + Recoil | ExpressJs
-            + NodeJs | Fastify | WebSocket - Socket.io | Redis Queue | Docker ( DockerRode, Images ) |
-            MongoDB | AWS - S3, Cloudfront, EC2, ASG, ECR, ECS
+            Tech Stacks : Java Spring Boot | Spring Data JPA | Flyway Migration
+            | MySQL | WebSocket (SockJS + STOMP) | Apache Kafka (Docker
+            container) | Redis (Geospatial) | Eureka service discovery
           </p>
           <mark>See in details</mark>
         </div>
       </div>
+
+      <div
+        id="title"
+        className="mt-28 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
+      >
+        Notes
+      </div>
+      
     </div>
   );
 };
