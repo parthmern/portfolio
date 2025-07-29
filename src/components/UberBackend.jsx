@@ -8,7 +8,7 @@ import YouTubePlayer from "./YoutubePlayer";
 export const UberBackend = () => {
   return (
     <div className="flex items-center justify-center">
-      <div className="w-[50%]">
+      <div className="w-[90%] md:w-[50%] ">
         <div
           id="title"
           className="mt-28 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"

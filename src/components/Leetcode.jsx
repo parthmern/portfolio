@@ -6,7 +6,7 @@ import YouTubePlayer from "./YoutubePlayer";
 const Leetcode = () => {
   return (
     <div className="flex items-center justify-center">
-      <div className="w-[50%]">
+      <div className="w-[90%] md:w-[50%]">
         {/* navabar */}
         <div
           id="title"

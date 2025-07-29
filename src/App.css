@@ -18,3 +18,7 @@ font-family: "Instrument Serif", serif !important;
   font-weight: 400;
   font-style: italic;
 }
+
+.sep {
+  margin: 0 5px; /* adds space before and after | */
+}

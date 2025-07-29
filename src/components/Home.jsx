@@ -23,15 +23,27 @@ export const Icon = ({ className, ...rest }) => {
 export const Home = () => {
   const navigate = useNavigate();
   return (
-    <div className="pt-20 pb-10">
-      <p>Home</p>
+    <div className="pt-20 md:pt-40 pb-10">
+      <div className="font-light text-md md:w-[50%] w-[90%] mx-auto">
+        <p>Hi, I'm <mark>Parth Patel</mark> , a passionate Full Stack Developer specializing in ReactJS, Node.js, Express.js, and JavaScript. I create innovative web solutions and impactful projects that deliver value and enhance user experiences. </p>
+        <p className="font-semibold mt-4">Skills: </p>
+          <p><mark>Language</mark> -- JavaScript <span class="sep">|</span>  Typescript <span class="sep">|</span> C/C++ </p>
+        <p><mark>Frontend</mark> -- ReactJs <span class="sep">|</span> NextJS <span class="sep">|</span> Context API <span class="sep">|</span> Recoil <span class="sep">|</span> Redux Toolkit <span class="sep">|</span> NextAuth.js <span class="sep">|</span> Css [ Tailwind, Saas, Mui ]  </p>
+        <p><mark>Backend</mark> -- NodeJs <span class="sep">|</span> ExpressJs <span class="sep">|</span> HonoJs <span class="sep">|</span> Fastify</p>
+        <p><mark>DataBase <span class="sep">|</span> ORMs</mark> -- SQL [ MySql, Oracle ] <span class="sep">|</span> NoSql [ MongoDb ] <span class="sep">|</span> Prisma </p>
+        <p><mark>Web Techs</mark> -- Docker, WebSocket [ Socket.io] <span class="sep">|</span> WebRtc <span class="sep">|</span> Redis <span class="sep">|</span> Kafka <span class="sep">|</span> Serverless Backend [ Cloudflare workers ] </p>
+        <p><mark>Dev Tools</mark> -- Git <span class="sep">|</span> Github <span class="sep">|</span> BitBucket <span class="sep">|</span> Postman <span class="sep">|</span> Jira </p>
+        <p><mark>Devops</mark> -- CI/CD, AWS [ EC2, S3, CloudFront ] <span class="sep">|</span> AutoScaling Groups AWS [ ASG, ECR, ECS ] <span class="sep">|</span> Kubernetes K8S </p>
+        <p><mark>Monitoring <span class="sep">|</span> Logging</mark> -- Newrelic <span class="sep">|</span> Grafanna <span class="sep">|</span> Prometheus <span class="sep">|</span> Loki </p>
+        <p><mark>Testing</mark> -- Unit and Integration [ JEST, Supertest, Vitest ] <span class="sep">|</span> EndToEnd [ Cypress ]  <span class="sep">|</span> NonFunctional [ Grafana K6 ] </p>
+      </div>
       <div
         id="title"
         className="mt-28 align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
       >
         Projects
       </div>
-      <div className="border mt-10 border-white/[0.2] flex flex-col items-start w-[50%] mx-auto p-4 relative ">
+      <div className="border mt-10 border-white/[0.2] flex flex-col items-start md:w-[50%] w-[90%]  mx-auto p-4 relative ">
         <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
@@ -61,7 +73,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="border mt-10 border-white/[0.2] flex flex-col items-start w-[50%] mx-auto p-4 relative ">
+      <div className="border mt-10 border-white/[0.2] flex flex-col items-start md:w-[50%] w-[90%]  mx-auto p-4 relative ">
         <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
@@ -96,10 +108,10 @@ export const Home = () => {
       >
         Notes
       </div>
-      <div onClick={()=>navigate("/notes/kafka")} className="w-[70%] cursor-pointer mx-auto flex gap-3 rounded-md border-[#FFFFFF] hover:border-opacity-35 hover:bg-[#1b1c1e] bg-[#111214] border-[1px] border-opacity-20 ">
-        <img className="w-[70%]" src={KafkaNotesImg} alt="Kafka Notes" />
-        <div className="w-[30%] p-4 flex flex-col items-center justify-center">
-          <p>One day read</p> 
+      <div onClick={()=>navigate("/notes/kafka")} className="md:w-[50%] w-[90%]  cursor-pointer mx-auto flex md:flex-row flex-col gap-3 rounded-md border-[#FFFFFF] hover:border-opacity-35 hover:bg-[#1b1c1e] bg-[#111214] border-[1px] border-opacity-20 ">
+        <img className="w-[100%] md:w-[70%]" src={KafkaNotesImg} alt="Kafka Notes" />
+        <div className="w-full md:w-[30%] p-1 md:p-4 flex flex-col items-center justify-center">
+          <p className="font-thin text-base">One day read</p> 
           <p><mark>Start Reading</mark></p>
           </div>
       </div>
