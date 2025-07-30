@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import { UberBackend } from './components/UberBackend';
 import { Home } from './components/Home';
 import { useEffect } from 'react';
+import { OtherNotes } from './components/OtherNotes';
 
 
 
@@ -32,7 +33,7 @@ function App() {
         <Route path='/leetcode' element={<Leetcode />} ></Route>
         <Route path='/uber' element={<UberBackend />}></Route>
         <Route path='/notes/kafka' element={<KafkaNotes />} ></Route>
-
+        <Route path='/notes' element={<OtherNotes />}></Route>
       </Routes>
     </div>
   );

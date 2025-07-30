@@ -231,6 +231,7 @@ const Leetcode = () => {
 
         <div className="bg-[#ebeced0c] font-thin mt-5 p-4 mb-10 rounded-md">
           <p>🐞 Other ways / ideas</p>
+          <p>- While working with this the question of AutoScaling where I was new to K8S so I tried to be dependent on AWS so I explored AutoScaling Groups [ ASG, ECR, ECS ] - <mark><a target="_blank" rel="noopener noreferrer" href="">Notes</a></mark> </p>
           <p>- can use sulu shi, rapidapi,spoj judge, Judge0 like third party RCE </p>
           <p>- long pooling on client side </p>
           <p>- change to tcp connection http req from evalutionService to submissionService ( can be
