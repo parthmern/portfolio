@@ -200,9 +200,9 @@ export const Home = () => {
           </p>
           <p className="text-base  font-thin">
             {" "}
-            Tech Stacks : Javascript + Typescript | ReactTs | Hono | Docker |
-            Kubernetes K8S | Helm Charts | WebSocket ( Scoket.io ) | AWS S3 |
-            GitOps ( ArgoCD )
+            Tech Stacks : Javascript + Typescript | ReactTs | Node + Express |
+            Hono | Docker | Kubernetes K8S | Helm Charts | WebSocket ( Scoket.io
+            ) | AWS S3 | GitOps ( ArgoCD )
           </p>
           <mark>See in details</mark>
         </div>

@@ -43,6 +43,7 @@ export const Sandbox = () => {
             <div className="mt-4  text-base  font-thin">
               <p>Javascript + Typescript</p>
               <p>ReactTs</p>
+              <p>NodeJs + ExpressJs</p>
               <p>Hono</p>
               <p>Docker</p>
               <p>WebSocket ( Socket.io )</p>
@@ -69,13 +70,15 @@ export const Sandbox = () => {
         <div className="mt-10">
           <p className=" text-3xl">✨Background</p>
           <p className="mt-4  text-base  font-thin">
-            You and I use once in a life time used Uber for ride booking and
-            same question is that how it is working underthehood. Why SpringBoot
-            here? My main tech stack is MERN but the place where I am working as
-            SDE intern, they have their previous backends are in springboot (
-            Java + Kotlin) so as a part of learning something good. I keep the
-            techstack as springboot. It is based on multiple microservices like
-            ...
+            You and I might have used Replit once in our lifetime to quickly
+            test or build something online, but have you ever wondered how it
+            actually works under the hood? Replit provides a powerful
+            cloud-based development environment where users can write, run, and
+            deploy code instantly. I used it before 1 year ago and that time it
+            really amazed to me. Yes, right now Replit is too big platform they
+            have AI agents and many more things, definitly I cannot clone all
+            things, but I tried to make thier MVP [ was an in-browser code
+            editor that could execute small code snippets ]
           </p>
 
           <p className="mt-5 text-xl">💚 Microservices :</p>
@@ -83,47 +86,30 @@ export const Sandbox = () => {
             <ul class="mt-3 custom-list">
               <li>
                 {" "}
-                <span className="mt-3 font-light">Enitiy Service: </span>
-                It has all models and Db migraiton based on <code>
-                  Flyway
-                </code>{" "}
-                maintained in this service which is shared across the other
-                services so It is kind of library. Db used here is{" "}
-                <code>MySql</code>.
+                <span className="mt-3 font-light">Init Service: </span>
+                This is the service is written in Hono + Typescript when user
+                starts environment, this service is mainly for copy default
+                template from <code>AWS S3 bucket</code> to another folder that
+                user will get for first time.
               </li>
               <li>
-                <span className="mt-3 font-light">Review Service: </span>A Based
-                on adding passenger and driver reviews after riding. So it is
-                basic CRUD app.
+                <span className="mt-3 font-light">Runner Service:</span>
+                This service is built using Express and TypeScript. It acts as
+                the core component of the system, maintaining a real-time{" "}
+                <code>WebSocket</code> connection with the user. It includes
+                several important layers, such as integration with{" "}
+                <code>node-pty</code> for terminal emulation and a{" "}
+                <code>file system</code> layer for handling user file events and
+                synchronization.
               </li>
               <li>
-                <span className="mt-3 font-light">Auth Service: </span>
-                handles Authentication based on email and password so{" "}
-                <code>JWT</code> token based authN happens here.
-              </li>
-              <li>
-                <span className="mt-3 font-light">Service Discovery: </span>
-                This is <code>Eureka server</code> where all other microservices
-                register its url and able to fetch url for other services.
-              </li>
-              <li>
-                <span className="mt-3 font-light">Location Service: </span>
-                It maintains the live location of drivers and Users. So it is
-                connected with <code>Redis</code> server which has Geospatial
-                data type based storage. This is really interesting service. [
-                Explained it below ]
-              </li>
-              <li>
-                <span className="mt-3 font-light">Booking Service:</span> User
-                can book a ride from point A to point B so it maintains all. It
-                is 💝 of this project.
-              </li>
-              <li>
-                <span className="mt-3 font-light">ClientSocket Service:</span>{" "}
-                It maintains a websocket connection based to Drivers and send
-                them notifications to accept the ride or not. Also it connects
-                with Booking Serice with <code>Kafka topic</code> wise async
-                communication.
+                <span className="mt-3 font-light">Orchestrator Service: </span>
+                As the name suggests, this service handles all
+                orchestration-related tasks. It leverages{" "}
+                <code>Kubernetes</code> and <code>Helm charts</code> to manage
+                isolated environments by running a dedicated <code>Pod</code>{" "}
+                for each user session, allowing them to access and interact with
+                their workspace securely.
               </li>
             </ul>
           </div>
@@ -132,18 +118,31 @@ export const Sandbox = () => {
         <div className="mt-10">
           <p className=" text-3xl">❇️ Architecture</p>
           <p className="mt-3 font-thin">
-            <code>Location Service:</code> This Service manages real‑time driver
-            positioning by storing each driver’s live location in Redis using
-            its geospatial capabilities aka <mark>Redis geospatial</mark>. This
-            allows the system to efficiently query and retrieve all drivers
-            within a 5 km radius of a ride request. When a new booking is
-            created, the service instantly identifies nearby drivers and sends
-            them notifications, enabling them to accept or decline the ride in
-            real time.
+            <code>Orchestrator Service:</code> This is core service, it mangaes
+            everything including apis/socket connection with Frontend, S3 sync,
+            fileSystem interection. <code>Helm</code> and the{" "}
+            <code>Kubernetes API</code> to deploy a dedicated user pod whenever
+            a new session is created - first of all, <code>init container</code>{" "}
+            which is container of aws cli that copy S3/userId files into
+            /workspace <code>Ephemeral Vol</code> and then there are two running
+            containers One has runner code [ It fetch image from docker hub that
+            has runner service code which runs on PORT 4000 ] and second
+            container is <code>Side Car</code> Container which is kind of
+            syncing container that sync "/workspace" and to "S3/userId/" after
+            every 30 seconds.
+            <p>
+              - Also there is intilaization of<code>NGINX Ingress</code> which
+              is revealing 4000 PORT - runnerService and 4001 PORT - user's
+              NodeJs Server to the url shows in below image.
+            </p>
           </p>
 
           <div className="relative mt-10 my-8 aspect-video w-full flex items-center justify-center">
-            <ImagePreview imageUrl={uberLocationImg} />
+            <ImagePreview
+              imageUrl={
+                "https://res.cloudinary.com/dncm3mid4/image/upload/v1760280528/articles/kt0ce4it9iu95q8crzfh.png"
+              }
+            />
           </div>
         </div>
 
@@ -152,40 +151,34 @@ export const Sandbox = () => {
 
           <p className="mt-3 font-thin">
             <p>
-              <mark>1</mark> User book a car Point A ( Lat, Long ) to Point B (
-              Lat, Long ) .
+              <mark>0</mark> User opens new Repl.
             </p>
             <p>
-              <mark>2</mark> Create a new booking to DB.
+              <mark>1</mark> First api req goes to init Service Which is has
+              envId and ReplId so based on that envId ( ex. NodeJs ) it copy all
+              files from AWS S3 bucket's folder defaultNodeJs -{">"} replId
+              folder.
             </p>
             <p>
-              <mark>3</mark> Send a req to User that you booked a ride
-              "Scheduled".
+              <mark>2</mark> Then it hits Orchestrator service which initalize a
+              pod for user in K8S cluster. This is the most complex part
+              explained above in Architecture section. [ In short, K8S pod,
+              service, deployment, nginx, init container, aws-s3-sync side
+              container, runner Service with websocket connection ]
             </p>
             <p>
-              <mark>4</mark> Async communication to find all nearbyDriversIds
-              like [ 1,2,3 ].
-            </p>
-            <p>
-              <mark>5</mark> Async communication through Kafka topic Queue and
-              send those ids to ClientSocketService.
-            </p>
-            <p>
-              <mark>6</mark> ClientSocketService send that new Booking to the
-              all drivers through websocket connection to client.
-            </p>
-            <p>
-              <mark>7</mark> When single driver accept the request then it goes
-              to ClientSocketService.
-            </p>
-            <p>
-              <mark>8</mark> Async communication through Kafka topic Queue and
-              send to BookingService back.
+              <mark>4</mark> The connection establish from Frontend to that pod
+              using webSocket. Some Jargons like NodePty and XtermJs to provide
+              environtment of psudo terminals.
             </p>
           </p>
 
           <div className="mt-10">
-            <ImagePreview imageUrl={uberBookingImg} />
+            <ImagePreview
+              imageUrl={
+                "https://res.cloudinary.com/dncm3mid4/image/upload/v1760272236/articles/nvqjyq9zoccil4abfm05.png"
+              }
+            />
           </div>
         </div>
 
@@ -207,16 +200,20 @@ export const Sandbox = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/parthmern/Java-SpringBoot-Uber"
+                href="https://github.com/parthmern/codeReplHatch"
               >
                 repo
               </a>
             </mark>
           </p>
           <p>
-            - Postman Doc -{" "}
+            - Gitops ArgoCd [Learnings] -{" "}
             <mark>
-              <a target="_blank" rel="noopener noreferrer" href="">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/parthmern/gitops-argocd"
+              >
                 Postman
               </a>
             </mark>{" "}
