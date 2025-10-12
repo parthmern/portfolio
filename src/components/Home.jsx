@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import KafkaNotesImg from "../images/home/kafkaNotes.jpg";
 import OtherNotesImg from "../images/home/otherNotes.jpg";
 
-
 export const Icon = ({ className, ...rest }) => {
   return (
     <svg
@@ -86,7 +85,7 @@ export const Home = () => {
         </p>
 
         <div className="mt-10">
-          <p >
+          <p>
             {" "}
             💚 Social Handles --{" "}
             <a
@@ -103,8 +102,8 @@ export const Home = () => {
             <a target="_blank" href="https://twitter.com/parthmern">
               <code>Twitter</code>
             </a>{" "}
-            <span></span>{" "}|{" "}
-             <a target="_blank" href="mailto:parthmern@gmail.com">
+            <span></span> |{" "}
+            <a target="_blank" href="mailto:parthmern@gmail.com">
               <code>Mail</code>
             </a>
           </p>
@@ -171,6 +170,39 @@ export const Home = () => {
             Tech Stacks : Java Spring Boot | Spring Data JPA | Flyway Migration
             | MySQL | WebSocket (SockJS + STOMP) | Apache Kafka (Docker
             container) | Redis (Geospatial) | Eureka service discovery
+          </p>
+          <mark>See in details</mark>
+        </div>
+      </div>
+
+      <div className="border mt-10 border-white/[0.2] flex flex-col items-start md:w-[50%] w-[90%]  mx-auto p-4 relative ">
+        <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white " />
+        <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white " />
+        <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
+        <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
+
+        <img
+          src={
+            "https://res.cloudinary.com/dncm3mid4/image/upload/v1760237848/articles/gyz6myw2rqubvda9cnoh.jpg"
+          }
+        ></img>
+
+        <div
+          onClick={() => navigate("/sandbox")}
+          className="mt-4 hover:bg-[#ebeced0c] p-2 rounded-md cursor-pointer"
+        >
+          <p className=" text-xl">
+            Code Repl Hatch
+            <span className="mt-4  text-base  font-thin">
+              {" "}
+              is containerized Sandbox. [ Clone of Replit, CodeSandbox.io ]{" "}
+            </span>{" "}
+          </p>
+          <p className="text-base  font-thin">
+            {" "}
+            Tech Stacks : Javascript + Typescript | ReactTs | Hono | Docker |
+            Kubernetes K8S | Helm Charts | WebSocket ( Scoket.io ) | AWS S3 |
+            GitOps ( ArgoCD )
           </p>
           <mark>See in details</mark>
         </div>
