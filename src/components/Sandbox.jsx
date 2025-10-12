@@ -182,15 +182,46 @@ export const Sandbox = () => {
           </div>
         </div>
 
-        {/* <div>
-          <p className="mt-10 text-3xl">🧬 Explaination Video</p>
-          <YouTubePlayer
-            embededId={"AW8WMh3S7G4?si=2Oi35Fa7MvaGCo88"}
-            thumbnailUrl={
-              "https://res.cloudinary.com/dncm3mid4/image/upload/v1753241540/articles/gtvstexwknpux9a8jl80.png"
-            }
-          />
-        </div> */}
+        <div>
+          <p className="mt-10 text-3xl">🧬 Some Jargons</p>
+          <p className="mt-3 font-thin">
+            - What is the reason of making whole <mark>inhouse sandbox</mark>? :
+            there are multiple paid and unpaid solution in the market like
+            stackblitz [ provide nodejs env in browser ], codeSandBox.io [
+            Provide Sandbox ] and many more. I can diretly use them as wrapper
+            to do all this things but I want to put my learnings of K8S, Helm
+            into practise and this is the project I want to work since a long
+            that's why I created MVP based on it.
+          </p>
+          <p className="mt-3 font-thin">
+            - <mark>Psudo Terminals</mark> : is the way you can access your
+            machine on browser through terminal and the best here is node-pty
+            that lets you do. I am using XtermJs on client side and Node-pty on
+            backend side to achieve this feature.
+          </p>
+          <p className="mt-3 font-thin">
+            - Issue of <mark>aws credentials env vars</mark>, How did I resolve
+            ? : there was one issue rearding managing AWS S3 bucket env vars
+            that I cannot keep inside the runnerCode container because I am
+            giving access of that to user through Psudo terminals right so I
+            need to make another sidecar cotainer which has that S3 env creds.
+            Another way, I got talking with one senior devops person [ @Vahid ]
+            using IRSA ( IAM roles for service accounts in AWS ) but my K8S
+            cluster is deployed on DigitalOcean so I cannot use IAM roles like
+            that. Thanks to @DigitalOcean for $200 free credits for students.
+          </p>
+          <p className="mt-3 font-thin">
+            - <mark>Future Planning</mark> to continue this project : Due to
+            some study and new learning curves I need to put this project in
+            this same situation now because I need to foucs on DSA and
+            springBoot. As well as, some features I will add like live
+            collabration ( y.js + liveblocks ) and AI Code Generation using some
+            llm models like Gpt, gemini and AI website maker using finetuned
+            model based on some cool react components. Also, I will add gitops
+            using argoCD and logging and Monitoring. This project is really good
+            leanring curv for me.
+          </p>
+        </div>
 
         <div className="bg-[#ebeced0c] font-thin mt-5 p-4 mb-10 rounded-md">
           <p>💚 Some Links</p>
