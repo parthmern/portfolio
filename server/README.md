@@ -29,6 +29,8 @@ npm i
 yarn 
 ```
 
+The Notion API route uses the published Notion site host to fetch pages. To use a different published host, set `NOTION_API_BASE_URL` to its API base URL (for example, `https://your-site.notion.site/api/v3`).
+
 First, run the development server:
 
 ```bash

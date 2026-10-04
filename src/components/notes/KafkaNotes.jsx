@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NotionPage } from "../notion/renderer";
-import "../Loader.css"
+import "../Loader.css";
 
 const rootPageId = "236c49f9d7d68093bf74d168004afcc3";
 
@@ -11,7 +11,9 @@ const KafkaNotes = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let data = await fetch("https://portfolio-mu-nine-81.vercel.app/api/notion?pageId=236c49f9d7d68093bf74d168004afcc3");
+        let data = await fetch(
+          "https://portfolio-mu-nine-81.vercel.app/api/notion?pageId=236c49f9d7d68093bf74d168004afcc3"
+        );
         data = await data.json();
         setRecordMap(data);
       } catch (err) {

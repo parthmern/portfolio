@@ -9,11 +9,11 @@
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^12.23.9",
     "lucide-react": "^0.509.0",
-    "notion-client": "^7.4.2",
+    "notion-client": "^7.12.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-notion": "^0.10.0",
-    "react-notion-x": "^7.4.2",
+    "react-notion-x": "^7.12.1",
     "react-router-dom": "^7.6.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
