@@ -90,20 +90,21 @@ export const Home = () => {
             💚 Social Handles --{" "}
             <a
               target="_blank"
+              rel="noreferrer"
               href="https://www.linkedin.com/in/parthpatelreal"
             >
               <code>Linkedin</code>
             </a>{" "}
             |{" "}
-            <a target="_blank" href="https://github.com/parthmern">
+            <a target="_blank" rel="noreferrer" href="https://github.com/parthmern">
               <code>Github</code>
             </a>{" "}
             |{" "}
-            <a target="_blank" href="https://twitter.com/parthmern">
+            <a target="_blank" rel="noreferrer" href="https://twitter.com/parthmern">
               <code>Twitter</code>
             </a>{" "}
             <span></span> |{" "}
-            <a target="_blank" href="mailto:parthmern@gmail.com">
+            <a target="_blank" rel="noreferrer" href="mailto:parthmern@gmail.com">
               <code>Mail</code>
             </a>
           </p>
@@ -122,7 +123,7 @@ export const Home = () => {
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
 
-        <img src={codeladderarenaImg}></img>
+        <img src={codeladderarenaImg} alt="Code Ladder Arena project" />
 
         <div
           onClick={() => navigate("/leetcode")}
@@ -152,7 +153,7 @@ export const Home = () => {
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
 
-        <img src={UberImg}></img>
+        <img src={UberImg} alt="Uber Backend Clone project" />
 
         <div
           onClick={() => navigate("/uber")}
@@ -185,6 +186,7 @@ export const Home = () => {
           src={
             "https://res.cloudinary.com/dncm3mid4/image/upload/v1760237848/articles/gyz6myw2rqubvda9cnoh.jpg"
           }
+          alt="Code Repl Hatch project"
         ></img>
 
         <div

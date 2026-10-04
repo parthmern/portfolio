@@ -3,7 +3,6 @@ import uberHeaderImg from "../images/uber/uber-header.png";
 import uberLocationImg from "../images/uber/uber-location.png";
 import uberBookingImg from "../images/uber/uber-booking.png";
 import ImagePreview from "./ImagePreview";
-import YouTubePlayer from "./YoutubePlayer";
 
 export const UberBackend = () => {
   return (
@@ -196,7 +195,7 @@ export const UberBackend = () => {
           <div className="bg-[#ebeced0c] font-thin mt-5 p-4 mb-10 rounded-md">
           <p>💚 Some Links</p>
           <p>- Github Repo Links - <mark><a target="_blank" rel="noopener noreferrer" href="https://github.com/parthmern/Java-SpringBoot-Uber">repo</a></mark></p>
-          <p>- Postman Doc - <mark><a target="_blank" rel="noopener noreferrer"  href="">Postman</a></mark>   </p>
+          <p>- Postman Doc - <mark>Postman</mark>   </p>
         </div>
 
       </div>

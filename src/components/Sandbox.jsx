@@ -1,9 +1,5 @@
 import React from "react";
-import uberHeaderImg from "../images/uber/uber-header.png";
-import uberLocationImg from "../images/uber/uber-location.png";
-import uberBookingImg from "../images/uber/uber-booking.png";
 import ImagePreview from "./ImagePreview";
-import YouTubePlayer from "./YoutubePlayer";
 
 export const Sandbox = () => {
   return (
