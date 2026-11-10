@@ -29,7 +29,7 @@ export const Home = () => {
       <div className="font-light text-md md:w-[50%] w-[90%] mx-auto">
         <p>
           Hi, I'm <mark>Parth Patel</mark> , a passionate Full Stack Developer
-          specializing in ReactJS, Node.js, Express.js, and JavaScript. I create
+          specializing in ReactJS, Node.js, Express.js, and Typescript. I create
           innovative web solutions and impactful projects that deliver value and
           enhance user experiences.{" "}
         </p>
@@ -42,6 +42,8 @@ export const Home = () => {
           <mark>Frontend</mark> -- ReactJs <span class="sep">|</span> NextJS{" "}
           <span class="sep">|</span> Context API <span class="sep">|</span>{" "}
           Recoil <span class="sep">|</span> Redux Toolkit{" "}
+          <span className="sep">|</span> TanStack Form{" "}
+          <span className="sep">|</span> TanStack Query{" "}
           <span class="sep">|</span> NextAuth.js <span class="sep">|</span> Css
           [ Tailwind, Saas, Mui ]{" "}
         </p>
@@ -68,9 +70,14 @@ export const Home = () => {
           Postman <span class="sep">|</span> Jira{" "}
         </p>
         <p>
-          <mark>Devops</mark> -- CI/CD, AWS [ EC2, S3, CloudFront ]{" "}
-          <span class="sep">|</span> AutoScaling Groups AWS [ ASG, ECR, ECS ]{" "}
-          <span class="sep">|</span> Kubernetes K8S{" "}
+          <mark>Devops</mark> -- CI/CD [ Jenkins, Octopus Deploy ]{" "}
+          <span className="sep">|</span> Docker{" "}
+          <span className="sep">|</span> Kubernetes K8S{" "}
+          <span className="sep">|</span> Terraform [ IaC ]{" "}
+          <span className="sep">|</span> AWS [ EC2, S3, CloudFront, ASG, ECR,
+          ECS, EKS, Lambda, SNS, Step Functions ]{" "}
+          <span className="sep">|</span> JFrog Artifactory{" "}
+          <span className="sep">|</span> CloudWatch [ Dashboards, Alarms ]{" "}
         </p>
         <p>
           <mark>

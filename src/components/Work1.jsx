@@ -8,7 +8,7 @@ export const Work1 = () => {
   return (
     <main className="w-[90%] md:w-[50%] mx-auto pt-28 pb-10">
       <h1 id="work-1-title" className="instrument-serif scroll-mt-24 text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]">
-        Work 1
+        Work 1 - Cloud Deployment &amp; Monitoring
       </h1>
 
       <div className="relative mt-28 my-8 aspect-video w-full flex items-center justify-center">
@@ -112,7 +112,7 @@ export const Work1 = () => {
           id="work-2-title"
           className="instrument-serif scroll-mt-24 text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
         >
-          Work 2
+          Work 2 - Backend Scheduling &amp; Concurrent Processing
         </h2>
         <div className="relative mt-10 mb-8 aspect-video w-full flex items-center justify-center">
           <ImagePreview imageUrl={springAppImg} />
@@ -199,7 +199,7 @@ export const Work1 = () => {
           id="work-3-title"
           className="instrument-serif scroll-mt-24 text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
         >
-          Work 3
+          Work 3 - AI Agents in CI Pipelines
         </h2>
         <div className="relative mt-10 mb-8 aspect-video w-full flex items-center justify-center">
           <ImagePreview imageUrl={aiAgentImg} />
