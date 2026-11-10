@@ -1,9 +1,10 @@
 import React from "react";
 import codeladderarenaImg from "../images/home/codeladderarean.jpg";
 import UberImg from "../images/home/uber.jpg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import KafkaNotesImg from "../images/home/kafkaNotes.jpg";
 import OtherNotesImg from "../images/home/otherNotes.jpg";
+import workExperienceImg from "../images/work/workEx.png";
 
 export const Icon = ({ className, ...rest }) => {
   return (
@@ -110,6 +111,49 @@ export const Home = () => {
           </p>
         </div>
       </div>
+
+      <section aria-labelledby="work-experience-title" className="mt-28">
+        <h2
+          id="work-experience-title"
+          className="instrument-serif align-middle text-center text-5xl [text-shadow:-1px_2px_19px_rgba(255,255,255,1)]"
+        >
+          Work Experience
+        </h2>
+        <div className="border mt-10 border-white/[0.2] flex flex-col items-start md:w-[50%] w-[90%] mx-auto p-4 relative">
+          <Icon aria-hidden="true" className="absolute h-6 w-6 -top-3 -left-3 text-white" />
+          <Icon aria-hidden="true" className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
+          <Icon aria-hidden="true" className="absolute h-6 w-6 -top-3 -right-3 text-white" />
+          <Icon aria-hidden="true" className="absolute h-6 w-6 -bottom-3 -right-3 text-white" />
+
+          <img src={workExperienceImg} alt="Work experience architecture" />
+
+          <Link
+            to="/work"
+            aria-label="See my work experience in details"
+            className="block w-full mt-4 hover:bg-[#ebeced0c] p-2 rounded-md cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff6363]"
+          >
+            <h3 className="text-xl">
+              Software Engineering Intern{" "}
+              <span className="text-base font-thin">
+                working on full-stack applications, AWS infrastructure, and
+                agentic AI solutions with AI agents.
+              </span>
+            </h3>
+            <p className="text-base font-thin">Work experience : <code>May 2025 - Present</code></p>
+            <p className="text-base font-thin">
+              Tech Stacks : ReactJS | Storybook | TanStack Form | TanStack Query |
+              TypeScript | Node.js | Hono | Java Spring Boot | Kotlin | Kotlin
+              Coroutines | Spring JPA | AWS Step
+              Functions | SQS | Lambda (Function URLs) | ECS | ECR | EKS | RDS |
+              Redis | Valkey | Terraform (IaC) | Kong | OpenAPI | CloudWatch |
+              CloudWatch Dashboards | Monitoring | SNS | AI Agents (Claude SDK) |
+              Jenkins CI Pipelines | Docker | JFrog
+              Artifactory | Octopus Deploy
+            </p>
+            <mark>See in details</mark>
+          </Link>
+        </div>
+      </section>
 
       <div
         id="title"

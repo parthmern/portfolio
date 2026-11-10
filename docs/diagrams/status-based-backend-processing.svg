@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1210" viewBox="0 0 1600 1210">
+<rect width="100%" height="100%" fill="white"/>
+<text x="50" y="32" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="40" fill="#1e293b">Status-based backend processing</text>
+<text x="50" y="92" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="24" fill="#475569">Java Spring Boot + Kotlin  /  Database polling  /  Row locking  /  Coroutines</text>
+<rect x="40" y="155" width="1520" height="310" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="65" y="177" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="22" fill="#475569">01  /  SERVICES &amp; SHARED STATE</text>
+<rect x="75" y="255" width="340" height="150" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<rect x="620" y="255" width="340" height="150" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+<rect x="1165" y="255" width="350" height="150" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="245.0" y="275" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" fill="#1e293b">Main backend service</text>
+<text x="245.0" y="321" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#475569">Java Spring Boot + Kotlin</text>
+<text x="245.0" y="358" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#475569">Creates work; maintains status</text>
+<text x="790.0" y="275" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" fill="#1e293b">Shared database table</text>
+<text x="790.0" y="321" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#475569">Row ID  |  Status  |  Data</text>
+<text x="790.0" y="358" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#475569">Source of processing state</text>
+<text x="1340.0" y="275" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" fill="#1e293b">Polling / worker service</text>
+<text x="1340.0" y="321" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#475569">Finds rows by eligible status</text>
+<text x="1340.0" y="358" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#475569">Runs Kotlin coroutines</text>
+<polyline points="425,330 610,330" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="597.1051460839597,335.4518567923211 610,330 597.1051460839597,324.5481432076789" fill="none" stroke="#2563eb" stroke-width="2"/>
+<text x="520.0" y="286" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#2563eb">Write row + status</text>
+<polyline points="1155,290 970,290" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="982.8948539160403,284.5481432076789 970,290 982.8948539160403,295.4518567923211" fill="none" stroke="#2563eb" stroke-width="2"/>
+<text x="1062.5" y="251" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#2563eb">Poll by status</text>
+<polyline points="1155,375 970,375" fill="none" stroke="#0f766e" stroke-width="2"/>
+<polyline points="982.8948539160403,369.5481432076789 970,375 982.8948539160403,380.4518567923211" fill="none" stroke="#0f766e" stroke-width="2"/>
+<text x="1062.5" y="399" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#0f766e">Update status</text>
+<rect x="40" y="500" width="1520" height="445" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="65" y="522" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="22" fill="#475569">02  /  WORKER PROCESSING FLOW</text>
+<rect x="75" y="590" width="280" height="170" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="215.0" y="611" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" fill="#2563eb">1. Poll eligible rows</text>
+<text x="215.0" y="663" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">Read rows whose status</text>
+<text x="215.0" y="695" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">is ready for processing.</text>
+<rect x="465" y="590" width="280" height="170" rx="8" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+<text x="605.0" y="611" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" fill="#c2410c">2. Claim under a lock</text>
+<text x="605.0" y="663" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">SELECT ... FOR UPDATE</text>
+<text x="605.0" y="695" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">Recheck; claim the row.</text>
+<rect x="855" y="590" width="280" height="170" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="995.0" y="611" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" fill="#2563eb">3. Run concurrent work</text>
+<text x="995.0" y="663" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">Kotlin coroutines for</text>
+<text x="995.0" y="695" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">non-blocking operations.</text>
+<rect x="1245" y="590" width="280" height="170" rx="8" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+<text x="1385.0" y="611" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" fill="#0f766e">4. Save final status</text>
+<text x="1385.0" y="663" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">Write the outcome back</text>
+<text x="1385.0" y="695" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1e293b">to the shared table.</text>
+<polyline points="365,675 455,675" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="442.1051460839596,680.4518567923211 455,675 442.1051460839596,669.5481432076789" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="755,675 845,675" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="832.1051460839597,680.4518567923211 845,675 832.1051460839597,669.5481432076789" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="1145,675 1235,675" fill="none" stroke="#2563eb" stroke-width="2"/>
+<polyline points="1222.1051460839597,680.4518567923211 1235,675 1222.1051460839597,669.5481432076789" fill="none" stroke="#2563eb" stroke-width="2"/>
+<text x="75" y="805" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="23" fill="#9a3412">Illustrative claim transaction: lock row, recheck eligibility, mark PROCESSING, then commit.</text>
+<text x="75" y="847" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="23" fill="#475569">Row locking coordinates competing workers; coroutine operations run after the claim commits.</text>
+<text x="75" y="895" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="21" fill="#475569">Polling repeats when no eligible work is available.</text>
+<rect x="40" y="980" width="1520" height="140" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="65" y="998" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="21" fill="#475569">03  /  EXAMPLE STATUS LIFECYCLE</text>
+<text x="800.0" y="1042" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Arial, sans-serif" font-size="29" fill="#0f766e">PENDING     -&gt;     PROCESSING     -&gt;     COMPLETED / FAILED</text>
+<text x="50" y="1152" dominant-baseline="text-before-edge" text-anchor="start" font-family="Arial, sans-serif" font-size="21" fill="#475569">Status names and claim transaction boundaries are illustrative; adapt them to your implementation.</text>
+</svg>

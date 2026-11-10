@@ -8,16 +8,21 @@ import { Home } from "./components/Home";
 import { useEffect } from "react";
 import { OtherNotes } from "./components/OtherNotes";
 import { Sandbox } from "./components/Sandbox";
+import { Work1 } from "./components/Work1";
 
 function App() {
   function ScrollToTop() {
-    const { pathname } = useLocation();
+    const { pathname, hash } = useLocation();
 
     useEffect(() => {
-      window.scrollTo(0, 0); // Scrolls to the top of the window
-      // Alternatively, for smooth scrolling:
-      // window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }, [pathname]); // Re-run effect when pathname changes
+      if (hash) {
+        const frame = window.requestAnimationFrame(() => {
+          document.getElementById(hash.slice(1))?.scrollIntoView({ block: "start" });
+        });
+        return () => window.cancelAnimationFrame(frame);
+      }
+      window.scrollTo(0, 0);
+    }, [pathname, hash]);
 
     return null; // This component doesn't render anything visually
   }
@@ -31,6 +36,8 @@ function App() {
         <Route path="/leetcode" element={<Leetcode />}></Route>
         <Route path="/uber" element={<UberBackend />}></Route>
         <Route path="/sandbox" element={<Sandbox />}></Route>
+        <Route path="/work" element={<Work1 />}></Route>
+        <Route path="/works" element={<Work1 />}></Route>
         <Route path="/notes/kafka" element={<KafkaNotes />}></Route>
         <Route path="/notes" element={<OtherNotes />}></Route>
       </Routes>
