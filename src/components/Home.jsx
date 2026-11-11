@@ -132,7 +132,11 @@ export const Home = () => {
           <Icon aria-hidden="true" className="absolute h-6 w-6 -top-3 -right-3 text-white" />
           <Icon aria-hidden="true" className="absolute h-6 w-6 -bottom-3 -right-3 text-white" />
 
-          <img src={workExperienceImg} alt="Work experience architecture" />
+          <img
+            src={workExperienceImg}
+            alt="Work experience architecture"
+            className="w-full aspect-[3/1] object-cover"
+          />
 
           <Link
             to="/work"
@@ -174,7 +178,11 @@ export const Home = () => {
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
 
-        <img src={codeladderarenaImg} alt="Code Ladder Arena project" />
+        <img
+          src={codeladderarenaImg}
+          alt="Code Ladder Arena project"
+          className="w-full aspect-[3/1] object-cover"
+        />
 
         <div
           onClick={() => navigate("/leetcode")}
@@ -204,7 +212,11 @@ export const Home = () => {
         <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white " />
         <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white " />
 
-        <img src={UberImg} alt="Uber Backend Clone project" />
+        <img
+          src={UberImg}
+          alt="Uber Backend Clone project"
+          className="w-full aspect-[3/1] object-cover"
+        />
 
         <div
           onClick={() => navigate("/uber")}
@@ -238,6 +250,7 @@ export const Home = () => {
             "https://res.cloudinary.com/dncm3mid4/image/upload/v1760237848/articles/gyz6myw2rqubvda9cnoh.jpg"
           }
           alt="Code Repl Hatch project"
+          className="w-full aspect-[3/1] object-cover"
         ></img>
 
         <div
